@@ -194,7 +194,22 @@
   // ---------------------
   // Define a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
   // ---------------------
+  function charFreq(text) {
+    let charList = {};
 
+    for (let x = 0; x < text.length; x++) {
+      if (charList[text[x]]) {
+        charList[text[x]] += 1;
+      }
+      else {
+        charList[text[x]] = 1;
+      }
+    }
+    return charList;
+  }
+
+  let test = charFreq("testing");
+  console.assert(test.t === 2 && test.n === 1, "function charFreq is incorrect");
 
 
 
